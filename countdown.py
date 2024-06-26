@@ -1,16 +1,16 @@
 from time import sleep
 
-
-def countdown(n):
+#l'input è un intero, vogliamo che questa funzione conti fino a 0
+def countdown(n): #caso iterativo
     counter = n
-    while counter >=0 :
+    while counter >=0 : #decrementa la variabile fino ache non arriva a 0
         print(counter)
-        # sleep(1)
+        # sleep(1) stampa più lenta
         counter -= 1
 
 
 def countdown_recursive(n):
-    if n <= 0:
+    if n <= 0: #condizione terminale
         print("Stop")
     else:
         print(n)

@@ -4,10 +4,10 @@ from functools import lru_cache, cache
 class Fibonacci:
 
     def __init__(self):
-        self.cache = {0: 0, 1: 1}
+        self.cache = {0: 0, 1: 1} #dizionario con valori che conosciamo all'inizio
 
     def calcola_elemento(self, n):
-        if n == 0:
+        if n == 0: #abbiamo due condizioni terminali
             return 0
         elif n == 1:
             return 1
@@ -16,12 +16,12 @@ class Fibonacci:
 
     def calcola_elemento_cache(self, n):
         if self.cache.get(n) is not None:
-            return self.cache[n]
+            return self.cache[n] #valore già calcolato
         else:
             self.cache[n] = self.calcola_elemento_cache(n-1)+ self.calcola_elemento_cache(n-2)
             return self.cache[n]
 
-    @lru_cache(maxsize=None)
+    @lru_cache(maxsize=None) #cache senza limiti
     def calcola_elemento_lru(self, n):
         if n == 0:
             return 0

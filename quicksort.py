@@ -1,14 +1,14 @@
 
 class QuickSort():
 
-    def sort(self, sequenza):
+    def sort(self, sequenza): #ha come input una lista
         if len(sequenza)<=1:
             return sequenza
         else:
             # 1) scegliere pivot
-            pivot = sequenza[0]
+            pivot = sequenza[0] #scegliamo un elemento a caso
 
-            # 2) dividere la lista in sottoliste
+            # 2) dividere la lista in sottoliste (3: più piccoli, uguali, più grandi)
             sequenza_smaller = []
             for i in range(1,len(sequenza)):
                 if sequenza[i]< pivot:
